@@ -2,6 +2,14 @@
   "$schema": "https://biomejs.dev/schemas/2.2.2/schema.json",
   "extends": ["ultracite"],
   "files": {
-    "experimentalScannerIgnores": [".github/**"]
+    "experimentalScannerIgnores": [".github/**", "./src/db/**"]
+  },
+  "linter": {
+    "rules": {
+      "style": {
+        "useImportType": "error",
+        "useExportType": "error"
+      }
+    }
   }
 }

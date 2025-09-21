@@ -3,6 +3,11 @@
     "strict": true,
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    // baseUrl: ".",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   }
 }

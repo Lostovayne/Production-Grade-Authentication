@@ -30,6 +30,9 @@
   "emmet.showExpandedAbbreviation": "never",
   "editor.codeActionsOnSave": {
     "source.fixAll.biome": "explicit",
-    "source.organizeImports.biome": "explicit"
-  }
+    "source.organizeImports.biome": "explicit",
+    "source.organizeImports": "never"
+  },
+  "typescript.preferences.includePackageJsonAutoImports": "off",
+  "typescript.suggest.autoImports": false
 }
