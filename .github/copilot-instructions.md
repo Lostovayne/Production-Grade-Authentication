@@ -208,6 +208,17 @@ Ultracite enforces strict type safety, accessibility standards, and consistent c
 - Use the namespace keyword instead of the module keyword to declare TypeScript namespaces.
 
 ### Style and Consistency
+
+#### Import Ordering (Biome Standards)
+- Order imports according to Biome's default grouping:
+  1. Built-in Node.js modules (using `node:` protocol)
+  2. External packages from node_modules
+  3. Internal modules (relative imports starting with `./` or `../`)
+- Within each group, sort imports alphabetically
+- Separate each group with a blank line
+- Use named imports in alphabetical order within each import statement
+- Place type-only imports after regular imports within the same group
+
 - Don't use global `eval()`.
 - Don't use callbacks in asynchronous tests and hooks.
 - Don't use negation in `if` statements that have `else` clauses.
@@ -328,4 +339,26 @@ try {
 } catch (e) {
   console.log(e);
 }
+```
+
+## Example: Import Ordering (Biome Standards)
+```typescript
+// ✅ Good: Proper import ordering
+import { readFile, writeFile } from 'node:fs/promises';
+import { join } from 'node:path';
+
+import { clsx } from 'clsx';
+import React from 'react';
+import { z } from 'zod';
+
+import { config } from '../config';
+import { logger } from './logger';
+import type { User } from './types';
+
+// ❌ Bad: Mixed import ordering
+import { logger } from './logger';
+import React from 'react';
+import { readFile } from 'node:fs/promises';
+import { config } from '../config';
+import { clsx } from 'clsx';
 ```
